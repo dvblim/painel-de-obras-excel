@@ -4,6 +4,8 @@ Painel em VBA para acompanhar o *follow up* de uma carteira de obras direto no E
 
 A planilha de exemplo usa **obras fictícias de galpões logísticos** (clientes, códigos, endereços, datas e registros inventados).
 
+![Painel de Obras: dados da obra, calendário com feriados e histórico de registros](docs/img/painel.png)
+
 ## O que o painel faz
 
 - **Ficha da obra**: dados vindos das bases (cliente, cidade, tipo, área, etapa, situação) e datas do cronograma, com edição das datas digitadas e bloqueio das que vêm de fórmula.
@@ -15,12 +17,21 @@ A planilha de exemplo usa **obras fictícias de galpões logísticos** (clientes
 - **Ata no Word**: gera a ata da reunião com o último registro de cada obra da lista.
 - **Log de alterações**: toda gravação feita pelo painel fica registrada em `tb_Alteracoes` (campo, antes, depois, usuário, data/hora).
 
+### Nova obra conferida na base
+
+![Área NOVA OBRA mostrando o que as fórmulas vão trazer para o código digitado](docs/img/nova-obra.png)
+
+### Obra entregue
+
+![Área OBRA ENTREGUE com o resumo do que vai para a tabela de entregues](docs/img/obra-entregue.png)
+
 ## Estrutura do repositório
 
 ```
 planilha/   Follow up Projetos 2028.xlsx   planilha de demonstração (tabelas do Excel)
 instalador/ mInstaladorPainelObras.bas     instalador completo (é o único arquivo necessário)
 src/        código-fonte de cada componente, para leitura e revisão
+docs/img/   capturas de tela do painel
 ```
 
 Os arquivos de `src/` são o mesmo código que o instalador grava no projeto VBA, separados por componente para facilitar a leitura. Os formulários (`*.frm.vba`) contêm só o código: os controles são criados em tempo de execução.
